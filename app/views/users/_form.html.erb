@@ -1,0 +1,40 @@
+<ol>
+  <li>
+    <label>Login</label>
+    <%= text_field :user, :login %>
+  </li>
+  <li>
+    <label>Email</label>
+    <%= text_field :user, :email %>
+  </li>
+  <li>
+    <label>Password</label>
+    <%= password_field :user, :password %>
+  </li>
+  <li>
+    <label><%= t 'users.confirmation' %></label>
+    <%= password_field :user, :password_confirmation %>
+  </li>
+  <% if is_admin? %>
+  <li>
+    <label><%= t 'users.administrator' %></label>
+    <%= check_box :user, :is_admin %>
+  </li>
+  <li>
+    <label><%= t 'users.commercial' %></label>
+    <%= check_box :user, :is_sales %>
+  </li>
+  <li>
+    <label><%= t 'users.stock' %></label>
+    <%= check_box :user, :is_stock %>
+  </li>
+  <% end %>
+  <li>
+    <label><%= t 'general.language' %></label>
+    <%= select(:user, :locale_id, Locale.find(:all).map {|l| [l.name, l.id]}, {:include_blank => false}) %>
+  </li>
+  <li>
+    <label>&nbsp;</label>
+    <%= submit_tag t('general.keep'), {:class => "button"} %>&nbsp;<%= link_to t('general.back'), users_url if is_admin?%>
+  </li>
+</ol>

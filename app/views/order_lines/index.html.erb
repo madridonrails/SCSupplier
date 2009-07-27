@@ -1,0 +1,32 @@
+<%= object_messages %>
+<div id="content" class="simpleform">
+  <fieldset><legend><%= t 'orders.order_lines' %><br/></legend></fieldset>
+  <%= render :partial => '/orders/show/' %>
+
+  <div id="table-area">
+
+    <% if is_admin? && @order.can_add_remove_lines? %>
+
+      <%= form_tag order_order_lines_url(@order) %>
+      <fieldset>
+      <%= render :partial => 'form' %>
+      <p class="add-link"><%= submit_tag t('general.add'), {:class => "button"}  %> </p>
+      </fieldset>
+      </form>
+    <% else %>
+    <br/>
+    <% end %>
+    <% unless @order_lines.empty? %>
+    <table class="tabla">
+      <%= render :partial => 'header' %>
+      <%= render :partial => 'order_line', :collection => @order_lines %>
+    </table>
+    <% else %>
+      <%=  t('orders.no_order_lines') %>
+    <% end %>
+  </div>
+
+  <p class="add-link"><%= link_to t('orders.orders'), orders_url %></p>
+
+</div>
+

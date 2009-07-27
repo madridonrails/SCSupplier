@@ -1,0 +1,70 @@
+es-ES:
+  activerecord:
+    attributes:
+      assembly:
+        product_id: Producto
+        quantity: Cantidad
+        raw_product_id: Producto Base
+      client:
+        address: Dirección
+        city: Ciudad
+        client_name: Nombre comercial
+        country: País
+        email: e-mail
+        fax: Fax
+        mobile: Teléfono móvil
+        name: Nombre
+        phone: Teléfono
+        postal_code: Código postal
+        surname: Apellidos
+      locale:
+        code: Código
+        name: Nombre
+      order:
+        estimated_date: Fecha estimada
+        order_date: Fecha
+        provider_id: Proveedor
+        state: Estado
+        track: Número de seguimiento
+      order_line:
+        order_id: Pedido
+        qty: Cantidad
+        raw_product_id: Producto
+        received_qty: Recibido
+      product:
+        description: Descripción
+        name: Nombre
+        reference: Referencia
+        stock: Stock
+      provider:
+        name: Nombre
+        contact: Contacto
+      raw_product:
+        description: Descripción
+        name: Nombre
+        pending: Pendiente
+        provider_id: Proveedor
+        stock: Stock
+      sale:
+        client_id: Cliente
+        estimated_date: Fecha estimada
+        sale_date: Fecha
+        state: Estado
+        track1: Número de seguimiento
+        track: Número de seguimiento
+        user_id: Usuario
+      sale_line:
+        sale_id: Venta
+        product_id: Producto
+        qty: Cantidad
+        received_qty: Recibido
+        provided_qty: Enviado
+      user:
+        login: Login
+        email: e-mail
+        locale_id: Idioma
+        password: Password
+        password_confirmation: Confirmación
+
+
+

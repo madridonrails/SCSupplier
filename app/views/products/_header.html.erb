@@ -1,0 +1,8 @@
+    <colgroup><col/><col/><col/><col/><col width="115"></colgroup>
+    <tr>
+      <th><%= link_to t('products.reference') , products_url(get_order('reference')) %></th>
+      <th><%= link_to t('general.name'), products_url(get_order('name')) %></th>
+      <th><%= link_to t('general.description'), products_url(get_order('description')) %></th>
+      <th><%= link_to 'Stock', products_url(get_order('stock')) %></th>
+      <th><%= t('general.actions') %></th>
+    </tr>

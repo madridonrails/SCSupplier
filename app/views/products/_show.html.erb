@@ -1,0 +1,9 @@
+<div id="order-area">
+  <%= render :partial => '/products/product_profile' %>
+</div>
+<% unless @product.assemblies.empty? %>
+  <table class="tabla">
+    <%= render :partial => '/assemblies/header_show' %>
+    <%= render :partial => '/assemblies/assembly_show', :collection => @product.assemblies %>
+  </table>
+<% end %>

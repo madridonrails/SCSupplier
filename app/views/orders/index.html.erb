@@ -1,0 +1,23 @@
+<%= object_messages %>
+<div id="content" class="simpleform">
+  <fieldset><legend><%=t('orders.orders') %><br/></legend></fieldset>
+  <%= render :partial => 'filter' %>
+  <div id="table-area">
+    
+    <% if is_admin? %>
+    <p class="add-link"><%= link_to t('general.new'), new_order_path %> <img src="images/icon-add.gif" align="absmiddle"></p>
+    <% else %>
+    <br/>
+    <% end %>
+
+    <% unless @orders.empty? %>
+    <table class="tabla">
+      <%= render :partial => 'header' %>
+      <%= render :partial => 'order', :collection => @orders %>
+    </table>
+    <% else %>
+       <%= t('orders.no_orders') %>
+    <% end %>
+  </div>
+  <%= will_paginate(@orders, :prev_label => "<<", :next_label => ">>", :params => params.clone.delete_if{|k,v| k == 'controller' || k == 'action' || k == 'page'}) %>
+</div>

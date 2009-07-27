@@ -1,0 +1,31 @@
+<ol>
+    <li>
+      <label><%= t 'general.product' %></label>
+      <%= @sale_line.product.name %>
+    </li>
+    <li>
+      <label><%= t 'general.quantity' %></label>
+      <% if (is_admin? || is_sales?) && @sale_line.sale.can_edit_qty? %>
+      <%= text_field :sale_line, :qty %>
+      <% else %>
+      <%= @sale_line.qty %>
+      <% end %>
+    </li>
+    <li>
+    <label><%= t 'general.provided_qty' %></label>
+      <% if (is_admin? || is_stock?)&& @sale_line.sale.can_edit_provided_qty? %>
+      <%= text_field :sale_line, :provided_qty %>
+      <% else %>
+      <%= @sale_line.provided_qty %>
+      <% end %>
+    </li>
+    <li>
+      <label><%= t 'general.received_qty' %></label>
+      <% if (is_admin? || is_sales?) && @sale_line.sale.can_edit_received_qty? %>
+      <%= text_field :sale_line, :received_qty %>
+      <% else %>
+      <%= @sale_line.received_qty %>
+      <% end %>
+    </li>
+</ol>
+

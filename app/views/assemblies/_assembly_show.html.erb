@@ -1,0 +1,7 @@
+<% unless assembly_show.blank? %>
+  <% td_class = cycle('', ' class="impar"' ) %>
+  <tr>
+    <td<%= td_class %>><%= h assembly_show.raw_product.name %> </td>
+    <td<%= td_class %>><%= h assembly_show.quantity %> </td>
+  </tr>
+<% end %>

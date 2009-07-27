@@ -1,0 +1,9 @@
+en-UK:
+  locales:
+    code: Code
+    languages: Languages
+    new_language: New Language
+    no_languages: There no Languages defined
+    sections: Sections
+    no_sections: There are no Sections
+    texts: Texts

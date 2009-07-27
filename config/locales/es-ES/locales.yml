@@ -1,0 +1,9 @@
+es-ES:
+  locales:
+    code: Código
+    languages: Idiomas
+    new_language: Nuevo Idioma
+    no_languages: No hay idiomas definidos
+    sections: Secciones
+    no_sections: No hay secciones
+    texts: Textos

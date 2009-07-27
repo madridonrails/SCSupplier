@@ -1,0 +1,9 @@
+    <colgroup><col/><col/><col/><col width="115"/></colgroup>
+    <tr>
+      <th><%= link_to 'ID', orders_url(get_order('id')) %> <!--img src="/images/icon-orderdown.gif" width="13" height="13" align="absmiddle"--> </th>
+      <th><%= link_to t('general.date'), orders_url(get_order('order_date')) %></th>
+      <th><%= link_to t('general.estimated_date'), orders_url(get_order('estimated_date')) %></th>
+      <th><%= t('providers.provider') %></th>
+      <th><%= t('general.state') %></th>
+      <th><a href="#"><%= t('general.actions') %></a></th>
+    </tr>

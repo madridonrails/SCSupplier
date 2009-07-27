@@ -1,0 +1,55 @@
+<ol>
+  <% unless @sale.new_record? %>
+    <li>
+      <label>ID</label>
+      <%= @sale.id %>
+    </li>
+    <li>
+      <label><%= t 'general.date' %></label>
+      <%= "#{int_date_to_string(@sale.sale_date)}"%>
+    </li>
+  <% else %>
+    <li>
+      <label><%= t 'general.date' %>:</label>
+      <%= "#{int_date_to_string(get_current_date)}"%>
+    </li>
+    <%= hidden_field :sale, :sale_date, {:value => get_current_date} %>
+  <% end %>
+  <li>
+    <label><%= t 'general.state' %>:</label>
+    <% if is_admin? %>
+      <%= select_state_for_sales %>
+    <% else %>
+      <%= @sale.state %><br/>
+      <label>&nbsp;</label>
+      <%= show_state_machine_transitions(@sale, sale_transitions_by_user) %>
+    <% end %>
+  </li> 
+  <li>
+    <label><%= t 'general.estimated_date' %></label>
+    <% if @sale.new_record? %>
+      <%= get_date_select(:sale, :estimated_date, get_time_from_aaaammdd(get_current_date))%><br/>
+    <% else %>
+      <% if (is_admin? || is_sales?) && @sale.can_edit_estimated_date? %>
+      <%= get_date_select(:sale, :estimated_date, get_time_from_aaaammdd(@sale.estimated_date.to_s))%><br/>
+      <% else %>
+      <%= int_date_to_string(@sale.estimated_date) %><br/>
+      <% end %>
+    <% end %>
+  <!--4 the future dynarch_date_select :sale, :estimated_date , :date_format => "%d/%m/%Y" -->
+  </li>
+  <li>
+    <label><%= t 'clients.client' %></label>
+      <%= @sale.client.name %>
+  </li>
+  <%= hidden_field :sale, :user_id, {:value => current_user.id} %>
+
+  <li>
+    <label><%= t('general.track') %></label>
+    <%= text_field :sale, :track %>
+  </li>
+  <li>
+    <label>&nbsp;</label>
+      <%= submit_tag  t('general.accept'), {:class => "button"}  %> &nbsp; <%= link_to t('general.cancel'), sales_url %>
+  </li>
+</ol>

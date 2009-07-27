@@ -1,0 +1,10 @@
+en-UK:
+  orders:
+    back_to_orders: Back to Orders
+    editing_order_line: Editing Order Line
+    editing_order: Editing Order
+    new_order: New Order
+    no_order_lines: There are no Order Lines
+    no_orders: There are no Orders
+    order_lines: Order Lines
+    orders: Orders

@@ -1,0 +1,27 @@
+<%= object_messages(@assembly) if @assembly != nil %>
+<%= object_messages %>
+<div id="order-area">
+<%= render :partial => '/products/product_profile' %>
+</div>
+<div class="simpleform">
+  <%= form_tag product_assemblies_url %>
+    <fieldset>
+      <legend><%= t 'assemblies.add_assembly' %></legend>
+      <%= render :partial => 'form' %>
+    </fieldset>
+  </form>
+  <p class="add-link"><%= link_to "#{t('assemblies.back_to_product_edition')} #{@product.name}", edit_product_url(@product) %> | <%= link_to "#{t('assemblies.back_to_products')}", products_url %></p>
+</div>
+<% unless @product.assemblies.empty? %>
+<div id="content" class="simpleform">
+  <fieldset><legend><%= t 'assemblies.assemblies_of' %>&nbsp;<%= h @product.name %></legend></fieldset>
+  <div id="table-area">
+    <table class="tabla"> 
+      <%= render :partial => 'header' %>
+      <%= render :partial => 'assembly', :collection => @product.assemblies %>
+    </table>
+  </div>
+</div>
+<% else %>
+  <%= t 'assemblies.no_assemblies_defined' %>
+<% end %>

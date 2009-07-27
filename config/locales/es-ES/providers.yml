@@ -1,0 +1,6 @@
+es-ES:
+  providers:
+    contact: Contacto
+    no_providers: No hay proveedores
+    provider: Proveedor
+    providers: Proveedores

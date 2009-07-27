@@ -1,0 +1,53 @@
+<%= object_messages %>
+<div id="content" class="simpleform">
+  <fieldset><legend><%= (t 'general.pending' ) %><br/></legend></fieldset>
+  <div id="table-area">
+    <% unless @pending.empty? %>
+        <%
+          products_qtys = @pending[:products][:products_qtys]
+          products_objs = @pending[:products][:products_objs]
+          raw_products_qtys = @pending[:raw_products][:raw_products_qtys]
+          raw_products_objs = @pending[:raw_products][:raw_products_objs]
+        %>
+          <br/>
+          <table class="tabla">
+              <colgroup><col/><col width="140"/></colgroup>
+                <tr>
+                  <th><%= t 'general.product' %></th>
+                  <th><%= t 'sales.pending_to_build' %></th>
+                </tr>
+             <% unless products_qtys.empty? %>
+              <% products_qtys.each{|k,v| %>
+                <tr>
+                  <td> <%= products_objs[k].name %></td><td> <%= v %> </td>
+                </tr>
+              <% } %>
+              </table>
+             <% else %>
+              </table>
+              <%= t 'sales.no_pending_to_build' %><br/>
+             <% end %>
+          <br/>
+          <table class="tabla">
+              <colgroup><col/><col width="140"/></colgroup>
+                <tr>
+                  <th><%= t 'base_products.base_product' %></th>
+                  <th><%= t 'sales.pending_to_order' %></th>
+                </tr>
+            <% unless raw_products_qtys.empty? %>
+              <% raw_products_qtys.each{|k,v| %>
+                <tr>
+                  <td> <%= raw_products_objs[k].name %></td><td> <%= v %> </td>
+                </tr>
+              <% } %>
+          </table>
+            <% else %>
+          </table>
+              <%= t 'sales.no_pending_to_order' %><br/>
+            <% end %>
+    <% else %>
+       <%= t 'sales.nothing_to_build_order' %>
+    <% end %>
+  </div>
+  <p class="add-link"><%= link_to (t 'sales.back_to_sales'), sales_path %></p>
+</div>

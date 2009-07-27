@@ -1,0 +1,10 @@
+<div id="order-area">
+  <span><b>ID:</b><%= "#{@sale.id.to_s}" %> </span><br/>
+  <span><b><%= t 'general.date' %>:</b><%=h "#{int_date_to_string(@sale.sale_date)}" %> </span><br/>
+  <span><b><%= t 'general.estimated_date' %>:</b> <%=h "#{int_date_to_string(@sale.estimated_date)}" %> </span><br/>
+  <span><b><%= t 'general.state' %>:</b> <%=h @sale.state %> </span><br/>
+  <span><b><%= t 'users.commercial' %>:</b> <%=h @sale.user.login %> </span><br/>
+  <span><b><%= t 'clients.client' %>:</b> <%=h @sale.client.name %> </span><br/>
+  <span><b><%= t 'general.track' %>:</b> <%=h @sale.track %></span><br/>
+  <span></span>
+</div>

@@ -1,0 +1,12 @@
+    <% unless provider.blank? %>
+      <% td_class = cycle('', ' class="impar"') %>
+      <tr>
+        <td<%= td_class %>><%= h provider.name %></td>
+        <td<%= td_class %>><%= h provider.contact %></td>
+        <td align="center"<%= td_class %>>
+          <%= link_to image_tag('icon-view.gif', :alt => t('general.show'),  :title => t('general.show') ), provider_url(provider) %>
+          <%= link_to image_tag('icon-edit.gif', :alt => t('general.edit'), :title => t('general.edit') ), edit_provider_url(provider) %>
+          <%= link_to image_tag('icon-delete.gif', :alt => t('general.delete'), :title =>  t('general.delete') ), provider_url(provider), :method => 'delete', :confirm => t('general.are_you_sure') %>
+        </td>
+      </tr>
+    <% end %>

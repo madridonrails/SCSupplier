@@ -1,0 +1,17 @@
+<%unless sale_line.blank?%>
+     <% td_class = cycle('', ' class="impar"') %>
+    <tr>
+      <td<%= td_class %>><%= sale_line.product.name %></td>
+      <td<%= td_class %>><%= sale_line.qty %></td>
+      <td<%= td_class %>><%= sale_line.provided_qty %></td>
+      <td<%= td_class %>><%= sale_line.received_qty %></td>
+      <td align="center"<%= td_class %>>
+        <% if @sale.can_edit_qty? || @sale.can_edit_provided_qty? || @sale.can_edit_received_qty? %>
+        <%= link_to image_tag('icon-edit.gif', :alt => t('general.edit'), :title => t('general.edit') ), edit_sale_sale_line_url(@sale, sale_line) %>
+        <% end %>
+        <% if (is_admin? || is_sales?) && @sale.can_add_remove_lines? %>
+        <%= link_to image_tag('icon-delete.gif', :alt => t('general.delete'), :title =>  t('general.delete') ), sale_sale_line_url(@sale, sale_line), :method => :delete, :confirm => t('general.are_you_sure') %>
+        <% end %>
+      </td>
+    </tr>
+<% end %>

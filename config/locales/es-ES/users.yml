@@ -1,0 +1,13 @@
+es-ES:
+  users:
+    adm: Adm.
+    administrator: Administrador
+    com: Comm.
+    commercial: Comercial
+    confirmation: Confirmación
+    new_user: Nuevo usuario
+    no_users: No hay Usuarios
+    sto: Stock
+    stock: Stock
+    users: Usuarios
+    user: Usuario

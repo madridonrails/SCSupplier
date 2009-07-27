@@ -1,0 +1,6 @@
+es-ES:
+  base_products:
+    are_you_sure: Estás seguro ? Todos los Assemblies asociados a este producto base se eliminarán!
+    base_products: Productos Base
+    base_product: Producto Base
+    no_base_products: No hay productos base

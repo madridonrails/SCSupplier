@@ -1,0 +1,6 @@
+<div id ="order-area">
+  <span><b><%= t ('general.name')  %> : </b><%= h @locale.name %></span><br/>
+  <span><b>C&oacute;digo: </b><%= h @locale.code %></span><br/>
+  <span></span>
+</div>
+<p class="add-link"><%= link_to t('general.edit'), edit_locale_url(@locale) %> | <%= link_to t('general.back'), locales_url %></p>

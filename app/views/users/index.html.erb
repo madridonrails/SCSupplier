@@ -1,0 +1,17 @@
+<%= object_messages %>
+<div id="content" class="simpleform">
+  <fieldset><legend><%= t 'users.users' %><br/></legend></fieldset>
+  <%= render :partial => 'filter' %>
+  <div id="table-area">
+    <p class="add-link"><%= link_to t('general.new'), new_user_url%> <img src="images/icon-add.gif" align="absmiddle"></p>
+    <% unless @users.empty? %>
+    <table class="tabla">
+      <%= render :partial => 'header' %>
+      <%= render :partial => 'user', :collection => @users %>
+    </table>
+    <% else %>
+      <%= t 'users.no_users' %>
+    <% end %>
+  </div>
+  <%= will_paginate(@users, :prev_label => "<<", :next_label => ">>", :params => params.clone.delete_if{|k,v| k == 'controller' || k == 'action' || k == 'page'}) %>
+</div>

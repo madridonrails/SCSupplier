@@ -1,0 +1,48 @@
+<ol>
+  <% unless @order.new_record? %>
+    <li>
+      <label>ID</label>
+      <%= @order.id %>
+    </li>
+    <li>
+      <label><%= t('general.date') %>:</label>
+      <%= "#{int_date_to_string(@order.order_date)}"%>
+    </li>
+  <% else %>
+    <li>
+      <label><%= t('general.date') %>:</label>
+      <%= "#{int_date_to_string(get_current_date)}"%>
+    </li>
+    <%= hidden_field :order, :order_date, {:value => get_current_date} %>
+    <!-- %= hidden_field :order, :state, {:value => 'accept_pendant'} %-->
+  <% end %>
+    <li>
+      <label><%= t('general.estimated_date') %></label>
+      <% if @order.new_record? %>
+        <%= get_date_select(:order, :estimated_date, get_time_from_aaaammdd(get_current_date))%><br/>
+      <% else %>
+        <% if is_admin? %>
+        <%= get_date_select(:order, :estimated_date, get_time_from_aaaammdd(@order.estimated_date.to_s))%><br/>
+        <% else %>
+        <%= int_date_to_string(@order.estimated_date) %><br/>
+        <% end  %>
+      <% end %>
+    <!--4 the future dynarch_date_select :order, :estimated_date , :date_format => "%d/%m/%Y" -->
+    </li>
+  <li>
+    <label><%= t('providers.provider') %></label>
+    <% if @order.new_record? %>
+      <%= select(:order, :provider_id, list_providers) %>
+    <% else %>
+      <%= @order.provider.name %>
+    <% end %>
+  </li>
+  <li>
+    <label><%= t('general.track') %></label>
+    <%= text_field :order, :track %>
+  </li>
+  <li>
+    <label>&nbsp;</label>
+      <%= submit_tag t('general.accept'), {:class => "button"}  %> &nbsp; <%= link_to t('general.cancel'), orders_url %>
+  </li>
+</ol>

@@ -1,0 +1,36 @@
+    <% unless section.blank? %>
+      <% td_class_section = cycle('', ' class="impar"', {:name => 'td?section'}) %>
+      <tr id="section-<%= section %>">
+        <td valign="top"<%= td_class_section %>>
+          <%= link_to_function(image_tag('maximize.gif', :height => 12, :width => 12, :hspace => 5, :border => 0, :id => "max-section-#{section}"), "Element.show('section-labels-#{section}'); Element.hide('max-section-#{section}');Element.show('min-section-#{section}');") %><%= link_to_function(image_tag('minimize.gif', :height => 12, :width => 12, :hspace => 5, :border => 0, :id => "min-section-#{section}", :style => 'display:none;'), "Element.hide('section-labels-#{section}'); Element.hide('min-section-#{section}');Element.show('max-section-#{section}');") %>
+        </td>
+        <td<%= td_class_section %>>
+          <%= section %><br/>
+          <div id="section-labels-<%= section %>" style="display:none;">
+            <% 
+              keys = @locale.keys(section).map(&:first).sort
+              keys.each do |key|
+              %>
+              <%form_remote_tag (:url => {:action => 'update_key', :id => @locale, :section => section, :key => key }, 
+                                 :update => "message_area_#{section}.#{key}", 
+                                 :before => "$('message_area_#{section}.#{key}').hide(); $('spinner-#{section}.#{key}').show();", 
+                                 :complete=>"$('spinner-#{section}.#{key}').hide(); $('message_area_#{section}.#{key}').show();" ) do -%>
+              <% td_class_text = cycle('', ' class="impar"', {:name => 'td_text'}) %>
+              <table width="100%">
+                <tr>
+                  <td width="20%"<%= td_class_text %>><%= key %></td>
+                  <td width="20%"<%= td_class_text %>><%=h @locale.get_default_value_for_section_and_key( section, key)%></td>
+                  <td width="30%"<%= td_class_text %>>                        
+                    <a name="<%=section%>.<%=key%>"/><%= text_field_tag :value, @locale.get_value_for_section_and_key(section, key), :size => 30 %><%= hidden_field_tag "field_name", "#{section}.#{key}"%>
+                  </td>
+                  <td<%= td_class_text %>>
+                    <%=submit_tag t('general.update'), {:class => 'button'}%>&nbsp;<span id="spinner-<%=section%>.<%=key%>" style='display:none'><%= image_tag 'spinner.gif' %></span><span id='message_area_<%= section %>.<%= key %>' class='results-title-idea'></span>
+                  </td>
+                 </tr>               
+                </table>
+              <%end -%>
+            <%end -%>
+          </div>
+        </td>
+      </tr>
+    <% end %>

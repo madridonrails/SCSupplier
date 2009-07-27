@@ -1,0 +1,47 @@
+<ol>
+  <li>
+    <label><%= t 'clients.commercial_name' %></label>
+    <%= text_field :client, :client_name %>
+  </li>
+  <li>
+   <label><%= t 'general.name' %></label>
+    <%= text_field :client, :name %>
+  </li>
+    <label><%= t 'general.surname' %></label>
+    <%= text_field :client, :surname %>
+  <li>
+    <label>e-mail</label>
+    <%= text_field :client, :email %>
+  </li>
+  <li>
+    <label><%= t 'general.phone' %></label>
+    <%= text_field :client, :phone %>
+  </li>
+  <li>
+    <label><%= t 'general.address' %></label>
+    <%= text_field :client, :address %>
+  </li>
+    <label><%= t 'general.city' %></label>
+    <%= text_field :client, :city %>
+  </li>
+  <li>
+    <label><%= t 'general.country' %></label>
+    <%= text_field :client, :country %>
+  </li>
+  <li>
+    <label><%= t 'general.post_code' %></label>
+    <%= text_field :client, :postal_code %>
+  </li>
+  <li>
+    <label><%= t 'general.mobile' %></label>
+    <%= text_field :client, :mobile %>
+  </li>
+  <li>
+    <label>Fax</label>
+    <%= text_field :client, :fax %>
+  </li>
+  <li>
+    <label>&nbsp;</label>
+    <%= submit_tag t('general.accept'), {:class => "button"} %>&nbsp; <%= link_to t('general.cancel'), clients_url %>
+  </li>
+</ol>

@@ -1,0 +1,9 @@
+<%= object_messages(@raw_product) %>
+<div id="content" class="simpleform">
+  <%=  form_tag raw_product_url(@raw_product), :method => :put %>
+  <fieldset>
+      <legend><%= t 'general.edit' %> : <%=  @raw_product.name %><br/></legend>
+      <%= render :partial => 'form', :object => @raw_product %>
+  </fieldset>
+  </form>
+</div>

@@ -1,0 +1,8 @@
+es-ES:
+  clients:
+    client: Cliente
+    clients: Clientes
+    commercial_name: Nombre comercial
+    contact_name: Nombre de contacto
+    new_client: Nuevo cliente
+    no_clients: No hay clientes

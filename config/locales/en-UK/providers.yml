@@ -1,0 +1,6 @@
+en-UK:
+  providers:
+    contact: Contact
+    no_providers: There are no providers
+    provider: Provider
+    providers: Providers

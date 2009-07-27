@@ -1,0 +1,14 @@
+<ol>
+  <li>
+    <label><%=  t('general.name') %></label>
+    <%= text_field :locale, :name %>
+  </li>
+  <li>
+    <label><%=  t('locales.code') %></label>
+    <%= text_field :locale, :code %>
+  </li>
+  <li>
+    <label>&nbsp;</label>
+    <%= submit_tag t('general.keep'), {:class => "button"} %>&nbsp;<%= link_to t('general.cancel'), locales_url %>
+  </li>
+</ol>

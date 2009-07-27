@@ -1,0 +1,12 @@
+es-ES:
+  assemblies:
+    add_assembly: Añadir nueva pieza
+    assembly: Pieza
+    assemblies_of: Piezas de
+    back_to_assemblies_of: Volver a las piezas del producto
+    back_to_product_edition: Volver a la edición del producto
+    back_to_products: Volver a productos
+    base_product: Producto base
+    edit: Editar Pieza de
+    edit_assemblies: Editar Piezas
+    no_assemblies_defined: No hay piezas definidas

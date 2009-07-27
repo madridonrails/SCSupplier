@@ -1,0 +1,9 @@
+<%= object_messages(@user)%>
+<div id="content" class="simpleform">
+  <%=  form_tag user_url(@user), :method => :put %>
+    <fieldset>
+      <legend><%= t 'general.edit' %> <%= @user.login %></legend>
+      <%= render :partial => 'form' %>
+    </fieldset>
+  </form>
+</div>

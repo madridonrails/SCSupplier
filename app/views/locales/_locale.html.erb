@@ -1,0 +1,14 @@
+    <% unless locale.blank? %>
+      <% td_class = cycle('', ' class="impar"') %>
+      <tr>
+        <td<%= td_class %>><%= h locale.name %></td>
+        <td<%= td_class %>><%= h locale.code %></td>
+        <td align="center"<%= td_class %>>
+          <%= link_to image_tag('icon-view.gif', :alt => t('general.show'),  :title => t('general.show') ), locale_url(locale) %>
+          <%= link_to image_tag('icon-edit.gif', :alt => t('general.edit'), :title => t('general.edit') ), edit_locale_url(locale) %>
+          <%= link_to image_tag('icon-delete.gif', :alt => t('general.delete'), :title =>  t('general.delete') ), locale_url(locale), :method => 'delete', :confirm => t('general.are_you_sure') %>
+          <!-- removed due to the removal of gibberich -->
+          <!-- %= link_to image_tag('icon-items.png', :alt => t('locales.texts'), :title   => t('locales.texts') ), view_sections_locale_url(locale) %-->
+        </td>
+      </tr>
+    <% end %>

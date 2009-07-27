@@ -1,0 +1,21 @@
+<%unless client.blank?%>
+  <% td_class = cycle('', ' class="impar"') %>
+  <tr>
+    <td<%= td_class %>><%= h client.client_name %> </td>
+    <td<%= td_class %>><%= h client.name %> </td>
+    <!--td<%= td_class %>><%= h client.surname %> </td-->
+    <td<%= td_class %>><%= h client.email %> </td>
+    <td<%= td_class %>><%= h client.phone %> </td>
+    <td<%= td_class %>><%= h client.address %> </td>
+    <!--td<%= td_class %>><%= h client.city %> </td>
+    <td<%= td_class %>><%= h client.country %> </td>
+    <td<%= td_class %>><%= h client.postal_code %> </td>
+    <td<%= td_class %>><%= h client.mobile %> </td>
+    <td<%= td_class %>><%= h client.fax %> </td-->
+    <td<%= td_class %>>
+       <%= link_to image_tag('icon-view.gif', :alt => t('general.show'), :title => t('general.show' )), client_url(client) %>
+       <%= link_to image_tag('icon-edit.gif', :alt => t('general.edit'), :title => t('general.edit') ), edit_client_url(client) %>
+       <%= link_to image_tag('icon-delete.gif', :alt => t('general.delete'), :title => t('general.delete') ), client_url(client), :method => 'delete', :confirm => t('general.are_you_sure') %>
+    </td>
+  </tr>
+<% end %>

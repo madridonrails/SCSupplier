@@ -1,0 +1,15 @@
+<div id="content" class="simpleform">
+  <fieldset><legend><%=  t('locales.languages') %><br/></legend></fieldset>
+  <div id="table-area">
+    <p class="add-link"><%= link_to t('locales.new_language'), new_locale_url%> <img src="/images/icon-add.gif" align="absmiddle"></p>
+    <% unless @locales.empty? %>
+    <table class="tabla">
+      <%= render :partial => 'header' %>
+      <%= render :partial => 'locale', :collection => @locales %>
+    </table>
+    <% else %>
+    <%= t 'locales.no_languages' %>
+    <% end %>
+  </div>
+  <%= will_paginate(@locales, :prev_label => "<<", :next_label => ">>", :params => params.clone.delete_if{|k,v| k == 'controller' || k == 'action' || k == 'page'}) %>
+</div>

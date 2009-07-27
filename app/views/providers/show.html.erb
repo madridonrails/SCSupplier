@@ -1,0 +1,8 @@
+<%= object_messages (@provider)%>
+<div id ="order-area">
+  <span><b>ID: </b><%= "#{@provider.id.to_s}" %></span><br/>
+  <span><b><%= t 'general.name' %>: </b><%= h @provider.name %></span><br/>
+  <span><b><%= t 'providers.contact' %>: </b><%= h @provider.contact %></span><br/>
+  <span></span>
+</div>
+<p class="add-link"><%= link_to t('general.edit'), edit_provider_url(@provider) %> | <%= link_to t('general.back'), providers_url %></p>

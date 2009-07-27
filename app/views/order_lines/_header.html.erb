@@ -1,0 +1,7 @@
+    <colgroup><col/><col/><col width="115"/></colgroup>
+    <tr>
+      <th><%= t 'general.product' %></th>
+      <th><%= link_to t('general.quantity'), order_order_lines_url(get_order('qty')) %></th>
+      <th><%= link_to t('general.received_qty'), order_order_lines_url(get_order('received_qty')) %></th>
+      <th><a href="#"><%= t 'general.actions' %></a></th>
+    </tr>

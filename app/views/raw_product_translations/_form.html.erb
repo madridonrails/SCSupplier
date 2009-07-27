@@ -1,0 +1,18 @@
+<ol>
+  <li>
+    <label><%= t 'general.language' %></label>
+    <%= params[:action] == 'edit' ? (@raw_product_translation.locale.code rescue '') : select_locales_for('raw_product_translation', @raw_product_translation) %>
+  </li>
+  <li>
+    <label><%= t 'general.name' %></label>
+    <%= text_field :raw_product_translation, :name %>
+  </li>
+  <li>
+    <label><%= t 'general.description' %></label>
+    <%= text_field :raw_product_translation, :description %>
+  </li>
+  <li>
+    <label>&nbsp;</label>
+    <%= submit_tag t('general.keep'), {:class => "button"} %>&nbsp; <%= link_to t('general.cancel'), raw_product_raw_product_translations_url(@raw_product) %>
+  </li>
+</ol>

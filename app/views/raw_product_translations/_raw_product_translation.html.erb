@@ -1,0 +1,12 @@
+  <%unless raw_product_translation.blank?%>
+    <% td_class = cycle('', ' class="impar"') %>
+    <tr>
+      <td<%= td_class %>><%=  h(raw_product_translation.locale.code) %></td>
+      <td<%= td_class %>><%=  h(raw_product_translation.name) %></td>
+      <td<%= td_class %>><%=  h(raw_product_translation.description) %></td>
+      <td align="center"<%= td_class %>>
+        <%= link_to image_tag('icon-edit.gif', :alt => t('general.edit'), :title => t('general.edit') ), edit_raw_product_raw_product_translation_path(@raw_product, raw_product_translation) %>
+        <%= link_to image_tag('icon-delete.gif', :alt => t('general.delete'), :title =>  t('general.delete') ), raw_product_raw_product_translation_url(@raw_product, raw_product_translation), :method => :delete, :confirm => t('general.are_you_sure') %>
+      </td>
+    </tr>
+  <% end %>

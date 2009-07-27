@@ -1,0 +1,7 @@
+<div id="sale-area">
+  <span><b>ID:</b><%= ("#{@sale.id.to_s}") %> </span><br/>
+  <span><b>Date:</b><%=h "#{int_date_to_string(@sale.sale_date)}" %> </span><br/>
+  <span><b>Estimated Date:</b> <%=h "#{int_date_to_string(@sale.estimated_date)}" %> </span><br/>
+  <span><b>Client:</b> <%=h @sale.client.name %> </span><br/>
+  <span></span>
+</div>

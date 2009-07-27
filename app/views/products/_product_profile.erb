@@ -1,0 +1,7 @@
+<%unless @product.blank?%>
+  <span><b>ID: </b><%= @product.id %> </span><br/>
+  <span><b><%= t 'products.reference' %>: </b><%= h @product.reference %> </span><br/>
+  <span><b><%= t 'general.name' %>: </b><%= h @product.name %> </span><br/>
+  <span><b><%= t 'general.description' %>:</b><%= h @product.description %> </span><br/>
+  <span><b>Stock: </b><%= h @product.stock %> </span><br/>
+<% end %>

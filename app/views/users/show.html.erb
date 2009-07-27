@@ -1,0 +1,9 @@
+<div id ="order-area">
+  <span><b>ID: </b><%= "#{@user.id.to_s}" %></span><br/>
+  <span><b>Login: </b><%= h @user.login %></span><br/>
+  <span><b>Email: </b><%= h @user.email %></span><br/>
+  <span><b><%= t 'users.administrator' %>: </b><%= yes_or_no @user.is_admin %></span><br/>
+  <span><b><%= t 'users.commercial' %>: </b><%= yes_or_no @user.is_sales %></span><br/>
+  <span><b><%= t 'users.stock' %>: </b><%= yes_or_no @user.is_stock %></span><br/>
+</div>
+<p class="add-link"><%= link_to t('general.edit'), edit_user_url(@user) %> | <%= link_to t('general.cancel'), users_url %></p>

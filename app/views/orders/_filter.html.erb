@@ -1,0 +1,27 @@
+<%= form_tag  orders_url, :method => :get %>
+  <table>
+    <tr>
+      <td>ID</td>
+      <td><%= text_field_tag 'filter[id]', (@filter[:id] rescue '') %></td>
+    </tr>
+    <tr>
+      <td><%= t('general.from') %> (aaaammdd)</td>
+      <td><%= text_field_tag 'filter[from]', (@filter[:from] rescue '') %></td>
+    </tr>
+    <tr>
+      <td><%= t('general.to') %> (aaaammdd)</td>
+      <td><%= text_field_tag 'filter[to]', (@filter[:to] rescue '') %></td>
+    </tr>
+    <tr>
+      <td><%= t('general.state') %></td>
+      <td><%= select_tag('filter[state]',  options_for_select(list_order_states_hash.merge({"" => ""}))) %></td>
+    </tr>
+
+    <tr>
+      <td><%= t('providers.provider') %></td>
+      <!--%= text_field_tag 'filter[provider]', (@filter[:provider] rescue '') %-->
+      <td><%= select_tag('filter[provider]', options_for_select(list_providers.merge({"" => ""}))) %></td>
+    </tr>
+  </table>
+  <%= submit_tag t('general.filter'), {:class => "button"} %>
+</form>

@@ -1,0 +1,40 @@
+<%= object_messages %>
+<div id="content" class="simpleform">
+  <fieldset><legend><%= t 'sales.sale_lines' %><br/></legend></fieldset>
+
+  <div id="order-area">
+    <span><b>ID:</b><%= ("#{@sale.id.to_s}") %> </span><br/>
+    <span><b><%= t 'general.date' %>:</b><%=h "#{int_date_to_string(@sale.sale_date)}" %> </span><br/>
+    <span><b><%= t 'general.estimated_date' %>:</b> <%=h "#{int_date_to_string(@sale.estimated_date)}" %> </span><br/>
+    <span><b><%= t 'clients.client' %>:</b> <%=h @sale.client.name %> </span><br/>
+    <span><b><%= t 'general.state' %>:</b> <%=h @sale.state %> </span><br/>
+    <span></span>
+  </div>
+
+
+  <div id="table-area">
+    <% if is_admin? || is_sales? %>
+    <%= form_tag sale_sale_lines_url(@sale) %>
+    <fieldset>
+    <%= render :partial => 'form' %>
+    <p class="add-link"><%= submit_tag t('general.add'), {:class => "button"}  %> </p>
+    </fieldset>
+    </form>
+    <% else %>
+    <br/>
+    <% end %>
+
+    <% unless @sale_lines.empty? %>
+    <table class="tabla">
+      <%= render :partial => 'header' %>
+      <%= render :partial => 'sale_line', :collection => @sale_lines %>
+    </table>
+    <% else %>
+      <%= t 'sales.no_sale_lines' %>
+    <% end %>
+  </div>
+
+  <p class="add-link"><%= link_to t('sales.sales'), sales_url %></p>
+
+</div>
+

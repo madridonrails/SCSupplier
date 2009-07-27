@@ -1,0 +1,14 @@
+<ol>
+  <li>
+    <label><%= t 'general.name' %></label>
+    <%= text_field :provider, :name %>
+  </li>
+  <li>
+    <label><%= t 'providers.contact' %></label>
+    <%= text_field :provider, :contact %>
+  </li>
+  <li>
+    <label>&nbsp;</label>
+    <%= submit_tag t('general.keep'), {:class => "button"} %>&nbsp;<%= link_to t('general.cancel'), providers_url %>
+  </li>
+</ol>

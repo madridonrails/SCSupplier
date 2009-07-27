@@ -1,0 +1,23 @@
+<ol>
+    <li>
+      <label><%= t 'general.name' %></label>
+      <%= @order_line.raw_product.name %>
+    </li>
+    <li>
+      <label><%= t 'general.quantity' %></label>
+      <% if is_admin? && @order_line.order.can_edit_qty? %>
+      <%= text_field :order_line, :qty %>
+      <% else %>
+      <%= @order_line.qty %>
+      <% end %>
+    </li>
+    <li>
+      <label><%= t 'general.received_qty' %></label>
+      <% if (is_admin? || is_stock?) && @order_line.order.can_edit_received_qty? %>
+      <%= text_field :order_line, :received_qty %>
+      <% else %>
+      <%= @order_line.received_qty %>
+      <% end %>
+    </li>
+</ol>
+

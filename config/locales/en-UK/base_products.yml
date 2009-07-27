@@ -1,0 +1,6 @@
+en-UK:
+  base_products:
+    are_you_sure: Are you sure ? All Assemblies within this base product shall be removed!
+    base_products: Base Products
+    base_product: Base Product
+    no_base_products: There are no base products

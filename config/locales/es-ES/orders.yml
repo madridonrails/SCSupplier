@@ -1,0 +1,10 @@
+es-ES:
+  orders:
+    back_to_orders: Volver a Pedidos
+    editing_order_line: Editando Línea de Pedido
+    editing_order: Editando el Pedido
+    new_order: Nuevo Pedido
+    no_order_lines: No hay Líneas de Pedido
+    no_orders: No hay Pedidos
+    order_lines: Líneas de Pedido
+    orders: Pedidos

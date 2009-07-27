@@ -1,0 +1,17 @@
+<div id="content" class="simpleform">
+  <fieldset><legend><%= link_to t('locales.languages'), locales_url %> &raquo; <%= @locale.name %> - <%= t 'locales.sections' %></legend></fieldset><br/>
+  <div id="table-area">
+    <% unless @sections.empty? %>
+    <table class="tabla">
+      <%= render :partial => 'sections_header' %>
+      <%= render :partial => 'section', :collection => @sections %>
+    </table>
+    <% else %>
+      <%= t 'locales.no_sections' %>
+    <% end %>
+  </div>
+</div>
+<!--% form_tag url_for({:controller=>:locales, :action=>:send_files_to_svn, :id=>@locale.id}) do %-->
+	<!--%= render :partial => 'shared/cancel_submit' %-->
+<!--% end %-->
+

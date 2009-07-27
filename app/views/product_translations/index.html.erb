@@ -1,0 +1,17 @@
+<%= object_messages %>
+<div id="content" class="simpleform">
+  <fieldset><legend><%= link_to t('products.products'), products_url %> &raquo; <%= @product.name %> - <%= t('translations.translations') %> <br/></legend></fieldset>
+  <%= render :partial => '/products/show' %>
+  <div id="table-area">
+    <p class="add-link"><%=  link_to t('general.new'), new_product_product_translation_url(@product) %> <img src="/images/icon-add.gif" align="absmiddle"></p>
+    <% unless @product_translations.empty? %>
+      <table class="tabla">
+        <%= render :partial => 'header' %>
+        <%= render :partial => 'product_translation', :collection => @product_translations %>
+      </table>
+    <% else %>
+      <%= t 'translations.no_translations' %>
+    <% end %>
+  </div>
+</div>
+

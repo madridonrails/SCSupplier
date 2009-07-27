@@ -1,0 +1,50 @@
+es-ES: 
+  general:
+    add: Añadir
+    are_you_sure: ¿ Estas seguro ?
+    accept: Aceptar
+    access: Acceso
+    actions: Acciones
+    address: Dirección
+    admin: "Administración"
+    back: Volver
+    base_products: Prod. Base
+    cancel: Cancelar
+    city: Ciudad
+    clients: Clientes
+    close_session: Cerrar sesión
+    country: País
+    date: Fecha
+    delete: Borrar
+    description: Descripción
+    edit: Editar
+    estimated_date: Fecha Estimada
+    exit: Salir
+    filter: Filtrar
+    final_products: Prod. Terminados
+    from: Desde
+    keep: Guardar
+    languages: Idiomas
+    language: Idioma
+    mobile: Móvil
+    master_tables: Tablas Maestras
+    name: Nombre
+    new: Nuevo
+    orders: Pedidos
+    pending: Pte. Construir & Pedir
+    phone: Teléfono
+    post_code: Código Postal
+    product: Producto
+    providers: Proveedores
+    provided_qty: Unidades provistas
+    quantity: Unidades
+    received_qty: Recibido
+    sales: Ventas
+    see_lines: Ver Líneas
+    show: Ver
+    state: Estado
+    surname: Apellidos
+    to: Hasta
+    track: Número de Envío
+    update: Modificar
+    users: Usuarios

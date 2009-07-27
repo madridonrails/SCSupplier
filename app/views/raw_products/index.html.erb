@@ -1,0 +1,17 @@
+<%= object_messages %>
+<div id="content" class="simpleform">
+   <fieldset><legend><%= t 'base_products.base_products' %><br/></legend></fieldset>
+   <%= render :partial => 'filter' %>
+   <div id="table-area">
+    <p class="add-link"><%= link_to t('general.new'), new_raw_product_path %> <img src="images/icon-add.gif" align="absmiddle"></p>
+    <% unless @raw_products.empty? %>
+    <table class="tabla">
+      <%= render :partial => 'header' %>
+      <%= render :partial => 'raw_product', :collection => @raw_products %>
+    </table>
+    <% else %>
+      <%= t 'base_products.no_base_products' %>
+    <% end %>
+  </div>
+  <%= will_paginate(@raw_products, :prev_label => "<<", :next_label => ">>", :params => params.clone.delete_if{|k,v| k == 'controller' || k == 'action' || k == 'page'}) %>
+</div>

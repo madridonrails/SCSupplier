@@ -1,0 +1,25 @@
+<%= form_tag  sales_url, :method => :get %>
+<table id="table-filter">
+    <tr>
+      <td>ID</td>
+      <td><%= text_field_tag 'filter[id]', (@filter[:id] rescue '') %></td>
+    </tr>
+    <tr>
+      <td><%= t'general.from' %> (aaaammdd)</td>
+      <td><%= text_field_tag 'filter[from]', (@filter[:from] rescue '') %></td>
+    </tr>
+    <tr>
+      <td><%= t'general.to' %> (aaaammdd)</td>
+      <td><%= text_field_tag 'filter[to]', (@filter[:to] rescue '') %></td>
+    </tr>
+    <tr>
+      <td><%= t'general.state' %></td>
+      <td><%= select_tag('filter[state]',  options_for_select(list_sales_states_hash.merge({"" => ""}))) %></td>
+    </tr>
+    <tr>
+      <td><%= t'clients.client' %></td>
+      <td><%= select_tag('filter[client]', options_for_select(list_clients.merge({"" => ""}))) %></td>
+    </tr>
+  </table>
+  <%= submit_tag t('general.filter'), {:class => "button"} %>
+</form>

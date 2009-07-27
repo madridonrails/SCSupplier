@@ -1,0 +1,7 @@
+<div id="order-area">
+  <span><b>ID:</b><%= ("ID:#{@order.id.to_s}") %> </span><br/>
+  <span><b><%= t 'general.date' %>:</b><%=h "#{int_date_to_string(@order.order_date)}" %> </span><br/>
+  <span><b><%= t 'general.estimated_date' %>:</b> <%=h "#{int_date_to_string(@order.estimated_date)}" %> </span><br/>
+  <span><b><%= t 'providers.provider' %>:</b> <%=h @order.provider.name %> </span><br/>
+  <span></span>
+</div>

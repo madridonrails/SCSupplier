@@ -1,0 +1,27 @@
+- Run rake db:migrate
+
+- Run rake scsupplier:initialize in order to:
+    > init users: admin, sales & stock
+    > init languages: es-ES, en-UK
+
+- Regarding languages:
+    > by default admin must work on default language: spanish.
+    > products & raw_products must be created by admin profile with default language: spanish
+    > languages maintenance must be performed by technical administration of the system. Look at table Locales & directory: config\locales.
+
+- Take note that there won't be any data in the system besides users & languages. A small  review on relationships:
+    > Products to sell are made of base products; This relationship is called assembly.
+    > Providers provide base products. You create Orders to Providers to request them...
+    > The salesman creates Sales to require products
+    > The Stockman manages arrivals of base products and departures of products
+    > Products & base products have an Stock
+    > The Base Products Stock is increased by the arrival of the base products requested in the orders...
+    > The Base Products Stock can be increased/decreased manually too.
+    > The Products Stock is decreased when provided in a sale.
+    > The Products Stock can be increased/decreased manually too.
+    > The Base Products Stock is decreased when Stockman creates products using base products and writes it on the system
+    > The Products Stock in increased when the Stockman creates products and writes it on the system
+    > Sales & orders must be accepted by the Admin.
+    > Sales & Orders are alive while are not canceled, pre_accepted or completed.
+    > Only alive Sales & Orders are taken into consideration when analising the Pending Products to Build & Base Products To order.
+    > The admin controls it all

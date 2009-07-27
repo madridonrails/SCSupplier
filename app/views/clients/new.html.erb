@@ -1,0 +1,10 @@
+<%= object_messages(@client) %>
+<div id="content" class="simpleform">
+  <%=  form_tag clients_url%>
+    <fieldset>
+      <legend><%= t 'clients.new_client' %><br/></legend>
+      <%= render :partial => 'form' %>
+    <fieldset>
+  </form>
+</div>
+

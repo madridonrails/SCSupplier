@@ -1,0 +1,9 @@
+<%= object_messages(@sale) %>
+<div id="content" class="simpleform">
+  <%=  form_tag sales_url%>
+    <fieldset>
+      <legend><%= t 'general.new' %><br/></legend>
+      <%= render :partial => 'form', :object => @sale %>
+    </fieldset>
+  </form>
+</div>

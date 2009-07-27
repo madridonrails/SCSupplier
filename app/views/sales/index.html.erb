@@ -1,0 +1,22 @@
+<%= object_messages %>
+<div id="content" class="simpleform">
+  <fieldset><legend><%= t 'sales.sales' %><br/></legend></fieldset>
+  <%= render :partial => 'filter' %>
+  <div id="table-area">
+    <%  if is_admin? || is_sales? %>
+    <p class="add-link"><%= link_to (t 'general.new'), new_sale_path %> <img src="images/icon-add.gif" align="absmiddle"></p>
+    <% else %>
+    <br/>
+    <%  end %>
+
+    <% unless @sales.empty? %>
+    <table class="tabla">
+      <%= render :partial => 'header' %>
+      <%= render :partial => 'sale', :collection => @sales %>
+    </table>
+    <% else %>
+       <%= t 'sales.no_sales' %>
+    <% end %>
+  </div>
+  <%= will_paginate(@sales, :prev_label => "<<", :next_label => ">>", :params => params.clone.delete_if{|k,v| k == 'controller' || k == 'action' || k == 'page'}) %>
+</div>

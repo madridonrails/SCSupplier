@@ -1,0 +1,15 @@
+    <% unless user.blank? %>
+      <% td_class = cycle('', ' class="impar"') %>
+      <tr>
+        <td<%= td_class %>><%= h user.login %></td>
+        <td<%= td_class %>><%= h user.email %></td>
+        <td<%= td_class %> align="center"><%= yes_or_no user.is_admin %></td>
+        <td<%= td_class %> align="center"><%= yes_or_no user.is_sales %></td>
+        <td<%= td_class %> align="center"><%= yes_or_no user.is_stock %></td>
+        <td align="center"<%= td_class %>>
+          <%= link_to image_tag('icon-view.gif', :alt => t('general.show'),  :title => t('general.show') ), user_url(user) %>
+          <%= link_to image_tag('icon-edit.gif', :alt => t('general.edit'), :title => t('general.edit') ), edit_user_url(user) unless user.is_main_admin? %>
+          <%= link_to image_tag('icon-delete.gif', :alt => t('general.delete'), :title =>  t('general.delete') ), user_url(user), :method => 'delete', :confirm => t('general.are_you_sure')  unless user.is_main_admin? %>
+        </td>
+      </tr>
+    <% end %>

@@ -1,0 +1,12 @@
+en-UK:
+  assemblies:
+    add_assembly: Add new assembly
+    assembly: Assembly
+    assemblies_of: Assemblies of
+    back_to_assemblies_of: Back to assemblies of
+    back_to_product_edition: Back to product edition
+    back_to_products: Back to products
+    base_product: Base Product
+    edit: Edit Assembly of
+    edit_assemblies: Edit Assemblies
+    no_assemblies_defined: No assemblies defined

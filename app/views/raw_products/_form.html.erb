@@ -1,0 +1,22 @@
+<ol>
+  <li>
+    <label><%= t 'general.name' %></label>
+    <%= text_field :raw_product, :name %>
+  </li>
+  <li>
+    <label><%= t 'general.description' %></label>
+    <%= text_area :raw_product, :description, {:cols => 50, :rows => 5} %>
+  </li>
+  <li>
+    <label><%= t 'providers.provider' %></label>
+    <%= select_providers_for_raw_products %>
+  </li>
+  <li>
+    <label>Stock</label>
+    <%= text_field :raw_product, :stock %>
+  </li>
+  <li>
+    <label>&nbsp;</label>
+      <%= submit_tag t('general.accept'), {:class => "button"}  %> &nbsp; <%= link_to t('general.cancel'), raw_products_url %>
+  </li>
+</ol>

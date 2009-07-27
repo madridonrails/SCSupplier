@@ -1,0 +1,19 @@
+<%unless sale.blank?%>
+   <% td_class = cycle('', ' class="impar"') %>
+   <tr>
+    <td<%= td_class %>><%=h sale.id %></td>
+    <td<%= td_class %>><%=h sale.user.login %></td>
+    <td<%= td_class %>><%=h int_date_to_string(sale.sale_date) %></td>
+    <td<%= td_class %>><%=h int_date_to_string(sale.estimated_date) %></td>
+    <td<%= td_class %>><%=h sale.state %></td>
+    <td<%= td_class %>><%=h sale.client.name %></td>
+    <td align="center"<%= td_class %>>
+      <%= link_to image_tag('icon-view.gif', :alt => t('general.show'),  :title => t('general.show') ), sale_url(sale) %>
+      <%= link_to image_tag('icon-edit.gif', :alt => t('general.edit'), :title => t('general.edit') ), edit_sale_path(sale) %>
+      <% if is_admin? && sale.can_delete_sale? %>
+      <%= link_to image_tag('icon-delete.gif', :alt => t('general.delete'), :title =>  t('general.delete') ), sale_url(sale),:method => :delete, :confirm => t('general.are_you_sure')  %>
+      <% end %>
+      <%= link_to image_tag('icon-items.png', :alt => t('general.see_lines'), :title =>  t('general.see_lines') ), sale_sale_lines_path(sale) %>
+    </td>
+  </tr>
+<% end %>

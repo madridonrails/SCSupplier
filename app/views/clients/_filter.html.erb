@@ -1,0 +1,13 @@
+<%= form_tag clients_url, :method => :get %>
+  <table>
+    <tr>
+      <td><%= t 'clients.commercial_name' %></td>
+      <td><%= text_field_tag 'filter[client_name]', (@filter[:client_name] rescue '') %></td>
+    </tr>
+    <tr>
+      <td><%= t 'general.name' %></td>
+      <td><%= text_field_tag 'filter[name]', (@filter[:name] rescue '')   %>
+    </tr>
+  </table>
+  <%= submit_tag t('general.filter'), {:class => "button"}%>
+</form>

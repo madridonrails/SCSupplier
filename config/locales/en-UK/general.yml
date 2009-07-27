@@ -1,0 +1,50 @@
+en-UK:
+  general:
+    add: Add
+    are_you_sure: Are you sure?
+    accept: Accept
+    access: Access
+    actions: Actions
+    address: Address
+    admin: Administration
+    back: Back
+    base_products: Base Products
+    cancel: Cancel
+    city: City
+    clients: Clients
+    close_session: Close Session
+    country: Country
+    date: Date
+    delete: Delete
+    description: Description
+    edit: Edit
+    estimated_date: Estimated Date
+    exit: Exit
+    filter: Filter
+    final_products: Final Products
+    from: From
+    keep: Save
+    languages: Languages
+    language: Language
+    mobile: Mobile
+    master_tables: Master Tables
+    name: Name
+    new: New
+    orders: Orders
+    pending: Building & Orders pend.
+    phone: Phone
+    post_code: Post code
+    product: Product
+    providers: Providers
+    provided_qty: Provided Qty
+    quantity: Qty
+    received_qty: Received Qty
+    sales: Sales
+    see_lines: See Lines
+    show: Show
+    state: State
+    surname: Surname
+    to: To
+    track: Track number
+    update: Update
+    users: Users

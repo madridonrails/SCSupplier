@@ -1,0 +1,11 @@
+<%= object_messages(@product) %>
+<%= object_messages(@product_translation) %>
+<div id="content" class="simpleform">
+  <%=  form_tag product_product_translations_url%>
+    <fieldset>
+      <legend><legend><%= link_to t('products.products'), products_url %> &raquo; <%= @product.name %> - <%= t('translations.new_translation') %> <br/></legend>
+      <%= render :partial => 'form' %>
+    </fieldset>
+  </form>
+</form>
+

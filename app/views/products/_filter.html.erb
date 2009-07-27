@@ -1,0 +1,17 @@
+<%=  form_tag products_url, :method => :get %>
+  <table id="table-filter">
+    <tr>
+      <td><%= t 'products.reference' %></td>
+      <td><%= text_field_tag 'filter[reference]', (@filter[:reference] rescue '')   %></td>
+    </tr>
+    <tr>
+      <td><%= t 'general.name' %></td>
+      <td><%= text_field_tag 'filter[name]', (@filter[:name] rescue '')   %></td>
+    </tr>
+    <tr>
+      <td><%= t 'general.description' %></td>
+      <td><%= text_field_tag 'filter[description]', (@filter[:description] rescue '') %></td>
+    </tr>
+  </table>
+  <%= submit_tag t('general.filter'), {:class => "button"} %>
+</form>

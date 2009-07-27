@@ -1,0 +1,13 @@
+<%= object_messages(@order_line) %>
+<div id="content" class="simpleform">
+<%= form_tag  order_order_line_path(@order, @order_line), :method => :put %>
+    <fieldset>
+      <legend><%= t 'orders.editing_order_line' %><br/></legend>
+      <%= render :partial => 'edit_order' %>
+    </fieldset>
+    <li>
+      <label>&nbsp;</label>
+      <%= submit_tag t('general.accept'), {:class => "button"}  %> &nbsp; <%= link_to t('general.cancel'), order_order_lines_url(@order) %>
+    </li>
+  </form>
+</div>

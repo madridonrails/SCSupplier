@@ -1,0 +1,13 @@
+es-ES:
+  sales:
+    back_to_sales: Volver a Ventas
+    no_sale_lines: No hay líneas de pedido
+    no_sales: No hay ventas
+    no_pending_to_build: No hay productos pendientes de construir
+    no_pending_to_order: No hay productos base pendientes de pedir
+    nothing_to_build_order: No hay ni productos ni productos base pendientes to construir/pedir
+    pending_to_build: Pendiente de construir
+    pending_to_order: Pendiente de pedir
+    sale_lines: Líneas de Pedido
+    sales: Ventas
+    sale: Venta

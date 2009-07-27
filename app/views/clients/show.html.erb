@@ -1,0 +1,15 @@
+<div id="order-area">
+  <span><b>ID: </b><%= "#{@client.id.to_s}"%></span><br/>
+  <span><b><%= t 'clients.commercial_name' %>: </b><%= h @client.client_name %></span><br/>
+  <span><b><%= t 'general.name' %>: </b><%= h @client.name %></span><br/>
+  <span><b><%= t 'general.surname' %>: </b><%= h @client.surname %></span><br/>
+  <span><b>E-mail: </b><%= h @client.email %></span><br/>
+  <span><b><%= t 'general.phone' %>: </b><%= h @client.phone %></span><br/>
+  <span><b><%= t 'general.address' %>: </b><%= h @client.address %></span><br/>
+  <span><b><%= t 'general.city' %>: </b><%= h @client.city %></span><br/>
+  <span><b><%= t 'general.country' %>: </b><%= h @client.country %></span><br/>
+  <span><b><%= t 'general.post_code' %>: </b><%= h @client.postal_code %></span><br/>
+  <span><b><%= t 'general.mobile' %>: </b><%= h @client.mobile %></span><br/>
+  <span><b>Fax: </b><%= h @client.fax %></span><br/>
+</div>
+<p class="add-link"><%= link_to t('general.edit'), edit_client_url(@client) %> | <%= link_to t('general.back'), clients_url %></p>

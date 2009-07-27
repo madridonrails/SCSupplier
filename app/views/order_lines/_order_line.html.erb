@@ -1,0 +1,16 @@
+<%unless order_line.blank?%>
+     <% td_class = cycle('', ' class="impar"') %>
+    <tr>
+      <td<%= td_class %>><%= order_line.raw_product.name %></td>
+      <td<%= td_class %>><%= order_line.qty %></td>
+      <td<%= td_class %>><%= order_line.received_qty %></td>
+      <td align="center"<%= td_class %>>
+        <% if (is_admin? || is_stock?) && (@order.can_edit_qty? || @order.can_edit_received_qty?) %>
+        <%= link_to image_tag('icon-edit.gif', :alt => t('general.edit'), :title => t('general.edit' )), edit_order_order_line_url(@order, order_line) %>
+        <% end %>
+        <% if is_admin? && @order.can_add_remove_lines? %>
+        <%= link_to image_tag('icon-delete.gif', :alt => t('general.delete'), :title => t('general.delete' )), order_order_line_url(@order, order_line), :method => :delete, :confirm => t('general.are_you_sure') %>
+        <% end %>
+      </td>
+    </tr>
+<% end %>

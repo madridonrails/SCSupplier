@@ -1,0 +1,22 @@
+<%= object_messages %>
+<div id="content" class="simpleform">
+          <% form_tag session_path do -%>
+          <fieldset>
+            <legend><%= t 'general.access' %></legend><br/>
+            <ol>
+              <li>
+                <label>Login</label>
+                <%= text_field_tag 'login' %>
+              </li>
+              <li>
+                <label>Password</label>
+                <%= password_field_tag 'password' %>
+              </li>
+            	<li>
+                <label>&nbsp;</label>
+                <%= submit_tag t('general.accept'), {:class => 'button'} %>
+              </li>
+            </ol>
+          </fieldset>
+          <% end -%>
+        </div>

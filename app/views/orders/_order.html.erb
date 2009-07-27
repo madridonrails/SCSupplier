@@ -1,0 +1,18 @@
+<%unless order.blank?%>
+   <% td_class = cycle('', ' class="impar"') %>
+   <tr>
+    <td<%= td_class %>><%=  order.id %></td>
+    <td<%= td_class %>><%=h int_date_to_string(order.order_date) %></td>
+    <td<%= td_class %>><%=h int_date_to_string(order.estimated_date) %></td>
+    <td<%= td_class %>><%=h order.provider.name rescue "" %></td>
+    <td<%= td_class %>><%=h order.state %></td>
+    <td align="center"<%= td_class %>>
+      <%= link_to image_tag('icon-view.gif', :alt => (t 'general.show'),  :title => (t 'general.show') ), order_url(order) %>
+      <%= link_to image_tag('icon-edit.gif', :alt => (t 'general.edit'), :title => (t 'general.edit') ), edit_order_path(order) %>
+      <% if is_admin? && order.can_delete_order? %>
+      <%= link_to image_tag('icon-delete.gif', :alt => (t 'general.delete'), :title =>  (t 'general.delete') ), order_url(order),:method => :delete, :confirm => (t 'general.are_you_sure')  %>
+      <% end %>
+      <%= link_to image_tag('icon-items.png', :alt => (t 'general.see_lines'), :title =>  (t 'general.see_lines') ), order_order_lines_path(order) %>
+    </td>
+  </tr>
+<% end %>

@@ -1,0 +1,9 @@
+      <colgroup><col/><col/><col width="115"></colgroup>
+      <tr>
+        <th><%= link_to 'Login' , users_url(get_order('login')) %></th>
+        <th><%= link_to 'Email', users_url(get_order('email')) %></th>
+        <th><%= link_to t('users.adm'), users_url(get_order('is_admin')) %></th>
+        <th><%= link_to t('users.com'), users_url(get_order('is_sales')) %></th>
+        <th><%= link_to t('users.sto'), users_url(get_order('is_stock')) %></th>
+        <th><%= t 'general.actions' %></th>
+      </tr>

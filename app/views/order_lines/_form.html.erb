@@ -1,0 +1,16 @@
+<ol>
+    <li>
+      <label><%= t 'general.product' %></label>
+      <%= select_for_order_line_raw_products_for_provider(@order.provider_id) %>
+    </li>
+    <li>
+      <label><%= t 'general.quantity' %></label>
+      <% if is_admin? %>
+      <%= text_field :order_line, :qty %>
+      <% else %>
+      <%= @order_line.qty %>
+      <% end %>
+    </li>
+
+</ol>
+

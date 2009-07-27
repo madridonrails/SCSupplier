@@ -1,0 +1,11 @@
+<ol>
+  <li>
+    <label><%= t 'assemblies.assembly' %></label>
+    <%= select_raw_products_for_assembly %>
+  </li>
+  <li>
+    <label><%= t 'general.quantity' %></label>
+    <%= text_field :assembly, :quantity %>
+    <%= submit_tag t('general.accept'), {:class => 'button'} %>
+  </li>
+</ol>

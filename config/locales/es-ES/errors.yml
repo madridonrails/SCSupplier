@@ -1,0 +1,6 @@
+es-ES:
+  activerecord:
+    errors:
+      messages:
+        blank: no puede estar vacío
+        too_short: es demasiado corto

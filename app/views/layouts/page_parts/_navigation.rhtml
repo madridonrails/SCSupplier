@@ -1,0 +1,20 @@
+<div id="navigation">
+  <ul>
+    <% 
+      if is_admin?
+        options_array = [[t('general.orders'), orders_path], [t( 'general.providers'), providers_path], [t( 'general.clients'), clients_path], [t( 'general.final_products'), products_path], [t( 'general.base_products'), raw_products_path], [t( 'general.users'), users_path]] if ['locales', 'users', 'providers', 'clients', 'products', 'raw_products', 'raw_product_translations', 'assemblies', 'product_translations'].index(params[:controller])
+        options_array = [[t('general.master_tables'), providers_path], [t( 'general.orders'), orders_path], [t( 'general.sales'), sales_path], [t( 'general.pending'), pending_sales_path]] if ['orders', 'sales', 'sale_lines', 'order_lines'].index(params[:controller])
+      elsif is_sales?
+        options_array = [[t('general.sales'), sales_path], [t( 'general.clients'), clients_path], [t( 'menu.my_profile'), edit_user_path(current_user)]]
+      elsif is_stock?
+        options_array = [[t('general.sales'), sales_path], [t( 'general.orders'), orders_path], [t( 'menu.my_profile'), edit_user_path(current_user)]]
+      end
+    %>
+    <% unless options_array.blank? %>
+    <% options_array.each do |object| %>
+      <% str_class = object[1][1..100].starts_with?(params[:controller]) ? ' class="currant"' : '' %>
+      <li><%= link_to "<span#{str_class}>#{object[0]}</span>", {:controller => object[1]} %></li>
+    <% end%>
+    <% end %>
+  </ul>
+</div>

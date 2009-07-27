@@ -1,0 +1,8 @@
+<tr>
+  <td><%= h assembly.raw_product.name rescue "" %> </td>
+  <td><%= h assembly.quantity %> </td>
+  <td>
+     <%= link_to image_tag('icon-edit.gif', :alt => t('general.edit'), :title => t('general__edit')), edit_product_assembly_url(assembly.product, assembly) %>
+     <%= link_to image_tag('icon-delete.gif', :alt => t('general.delete'), :title => t('general__delete')), product_assembly_url(assembly.product, assembly), :method => 'delete', :confirm => t('general.are_you_sure') %>
+  </td>
+</tr>

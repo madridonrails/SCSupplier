@@ -1,0 +1,4 @@
+<%= object_messages %>
+<!--%= render :partial => 'sorder', :object => @order % -->
+<%= render :partial => 'show' %>
+<p class="add-link"><%= link_to t('general.edit'), edit_order_path(@order) %> | <%= link_to t('orders.back_to_orders'), orders_path %></p>

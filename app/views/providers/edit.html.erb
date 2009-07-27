@@ -1,0 +1,9 @@
+<%= object_messages(@provider)%>
+<div id="content" class="simpleform">
+  <%=  form_tag provider_url(@provider), :method => :put %>
+    <fieldset>
+      <legend><%= t 'general.edit' %> <%= @provider.name %></legend>
+      <%= render :partial => 'form' %>
+    </fieldset>
+  </form>
+</div>

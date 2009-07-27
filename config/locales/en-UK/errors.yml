@@ -1,0 +1,6 @@
+en-UK:
+  activerecord:
+    errors:
+      messages:
+        blank: can not be blank
+        too_short: is too short

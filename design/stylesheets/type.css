@@ -1,0 +1,254 @@
+/* CSS Document */
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+font-size:14px;
+color:#464749;
+}
+
+
+ul, ol, li {
+list-style-type:none;
+margin:0px;
+padding:0px;
+}
+p {
+margin:0px;
+padding:0px;
+}
+a {
+color:#464749;
+text-decoration:underline;
+}
+a:hover{
+	color:#FFCC00;
+	text-decoration:none;
+}
+label {
+white-space:nowrap;
+}
+
+h1, h2, h3, h4, h5, h6 {
+-x-system-font:none;
+font-family: Arial, Helvetica, sans-serif;
+font-size-adjust:none;
+font-stretch:normal;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+}
+
+h1 {
+font-size:18px;
+float: right;
+padding-bottom:10px;
+padding-top:34px;
+font-weight:normal;
+color:#505153;
+}
+h2 {
+font-size:18px;
+font-weight:normal;
+color:#008CB9;
+}
+
+
+/* FORM STYLES*/
+.simpleform fieldset {
+  margin:0;
+  border:0;
+  padding:0;
+}
+.simpleform legend {
+font-size:18px;
+font-weight:normal;
+color:#008CB9;
+margin:0;
+padding:0px 0px 10px 0px;
+}
+
+.simpleform legend a {
+font-size:18px;
+font-weight:normal;
+color:#78AF2D;
+margin:0;
+padding:0;
+}
+
+.simpleform label {
+color:#4E4F51;
+font-size:14px;
+display: inline-block;
+vertical-align: top;
+width: 180px;
+padding-left:2px;
+}
+.simpleform fieldset ol {
+  margin: 0;
+  padding: 0;
+}
+.simpleform fieldset li {
+	list-style: none;
+	margin: 10px 0px;
+}
+
+.simpleform input {
+	color:#4E4F51;
+	font-size:13px;
+	border:0;
+	background-color:#E4EFD5;
+	padding:4px;
+	width:150px;
+	display: inline;
+}
+.simpleform textarea {
+font-family:Arial, Helvetica, sans-serif;
+color:#4E4F51;
+font-size:13px;
+border:0;
+background-color:#E4EFD5;
+padding:4px;
+margin-bottom:15px;
+}
+
+.simpleform a {
+color:#78AF2D;
+vertical-align:middle;
+font-weight:normal;
+text-decoration:underline;
+}
+
+.simpleform a:hover {
+text-decoration:none;
+}
+
+select {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#4E4F51;
+	font-size:13px;
+	border:0;
+	background-color:#E4EFD5;
+	padding:2px;
+	margin-top: 4px;
+	width: 160px;
+}
+
+
+
+
+
+
+input.button{
+	clear:both;
+	width:90px;
+	height:25px;
+	background-image:url(file:///C|/Users/disue%C3%B1o/Desktop/images/button.gif);
+	background-repeat:no-repeat;
+	text-align:center;
+	color:#FFFFFF;
+	font-size:13px;
+	font-weight:bold;
+	vertical-align: text-bottom;
+	margin-top: 8px;
+}
+
+.error {
+border:thin dashed #FF9900;
+color:#FF9900;
+margin:15px 0px 0px 0px;
+padding:10px;
+text-align:left;
+}
+
+
+/* pagination */
+
+.page-navigation {
+clear:both;
+display:block;
+float:none;
+margin:0;
+overflow:hidden;
+padding:20px 0px 10px 0px;
+text-align:center;
+color:#999999;
+}
+.page-navigation a, .page-navigation a:visited, .page-navigation span {
+padding:0 4px;
+text-decoration:none;
+color:#FF9900;
+}
+.page-navigation a:hover {
+text-decoration:underline;
+}
+.page-navigation a.previous, .page-navigation a.previous:visited, .page-navigation span.previous {
+padding:0 4px 0 16px;
+}
+.page-navigation a.next, .page-navigation a.next:visited, .page-navigation span.next {
+padding:0 16px 0 4px;
+}
+.page-navigation span.previous {
+color:#999999;
+}
+.page-navigation span.next {
+color:#999999;
+}
+.page-navigation a.previous {
+color:#008CB9;
+}
+.page-navigation a.next {
+color:#008CB9;
+}
+
+
+/* add link */
+
+.add-link {
+text-align:right;
+color:#78AF2D;
+vertical-align:middle;
+margin-bottom:15px;
+}
+.add-link a {
+color:#78AF2D;
+vertical-align:middle;
+font-weight:normal;
+text-decoration:underline;
+}
+.add-link a:hover {
+text-decoration:none;
+}
+
+
+/* footer type */
+.footer-text {
+font-weight:normal;
+color:#FFFFFF;
+font-size:12px;
+}
+.footer-text a {
+color:#FFFFFF;
+margin:0;
+text-decoration:underline;
+}
+.footer-text a:span {
+text-decoration:none;
+}
+.footer-text a:hover {
+text-decoration:none;
+}
+.cierreerror {
+	color: #FF6600;
+	text-decoration: none;
+	padding-right: 10px;
+	padding-left: 270px;
+	padding-top: 40px;
+	font-size: 24px;
+}
+#content li {
+	vertical-align: baseline;
+}
+.simpleform input[type="hidden"]{
+	display:none;
+	
+}

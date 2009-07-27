@@ -1,0 +1,13 @@
+en-UK:
+  sales:
+    back_to_sales: Back to Sales
+    no_sale_lines: There are no Sale Lines
+    no_sales: There are no Sales
+    no_pending_to_build: There are no products pending to build
+    no_pending_to_order: There are no raw products pending to order
+    nothing_to_build_order: There are neither products nor raw products pending to build/order
+    pending_to_build: Pending to build
+    pending_to_order: Pending to order
+    sales: Sales
+    sale_lines: Sale Lines
+    sale: Sale

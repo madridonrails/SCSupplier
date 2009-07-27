@@ -1,0 +1,17 @@
+<%= object_messages %>
+<div id="content" class="simpleform">
+  <fieldset><legend>Clientes<br/></legend></fieldset>
+  <%= render :partial => 'filter' %>
+  <div id="table-area">
+    <p class="add-link"><%=  link_to t('clients.new_client'), new_client_url%> <img src="images/icon-add.gif" align="absmiddle"></p>
+    <% unless @clients.empty? %>
+      <table class="tabla">
+        <%= render :partial => 'header' %>
+        <%= render :partial => 'client', :collection => @clients %>
+      </table>
+    <% else %>
+      <%= t('clients.no_clients') %>
+    <% end %>
+  </div>
+  <%= will_paginate(@clients, :prev_label => "<<", :next_label => ">>", :params => params.clone.delete_if{|k,v| k == 'controller' || k == 'action' || k == 'page'}) %>
+</div>

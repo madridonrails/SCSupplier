@@ -1,0 +1,10 @@
+<%= object_messages(@locale) %>
+<div id="content" class="simpleform">
+  <%=  form_tag locales_url%>
+    <fieldset>
+      <legend><%= t 'locales.new_language' %> <br/></legend>
+      <%= render :partial => 'form' %>
+    </fieldset>
+  </form>
+</div>
+

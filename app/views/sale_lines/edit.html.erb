@@ -1,0 +1,13 @@
+<%= object_messages(@sale_line) %>
+<div id="content" class="simpleform">
+<%= form_tag  sale_sale_line_path(@sale, @sale_line), :method => :put %>
+    <fieldset>
+      <legend><%= t 'general.edit' %><br/></legend>
+      <%= render :partial => 'edit_sale' %>
+    </fieldset>
+    <li>
+      <label>&nbsp;</label>
+      <%= submit_tag t('general.accept'), {:class => "button"}  %> &nbsp; <%= link_to t('general.cancel'), sale_sale_lines_url(@sale) %>
+    </li>
+  </form>
+</div>

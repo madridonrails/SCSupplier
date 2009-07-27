@@ -1,0 +1,11 @@
+<%= object_messages(@product) %>
+<div id="content" class="simpleform">
+  <%= form_tag product_url(@product), :method => :put %>
+    <fieldset>
+      <legend><%= t 'general.edit' %> <%= @product.name %></legend>
+      <%= render :partial => 'form', :object => @product %>
+    </fieldset>
+  </form>
+</div>
+<%= link_to t('assemblies.edit_assemblies'), product_assemblies_url(@product) %><br/>
+

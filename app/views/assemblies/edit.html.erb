@@ -1,0 +1,11 @@
+<%= object_messages(@assembly) if @assembly != nil %>
+<%= object_messages(@product)%>
+<div id="content"class="simpleform">
+  <%=  form_tag product_assembly_url(@product), :method => :put %>
+    <fieldset>
+      <legend><%= t 'assemblies.edit' %>&nbsp;<%= @product.name %></legend>
+      <%= render :partial => 'form' %>
+    </fieldset>
+  </form>
+  <p class="add-link"><%= link_to "#{t('assemblies.back_to_assemblies_of')} #{@product.name}", product_assemblies_url(@product) %></p>
+</div>

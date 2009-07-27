@@ -1,0 +1,15 @@
+<%unless raw_product.blank?%>
+  <% td_class = cycle('', ' class="impar"') %>
+  <tr>
+    <td<%= td_class %>><%= h raw_product.name %></td>
+    <td<%= td_class %>><%= h raw_product.description %></td>
+    <td<%= td_class %>><%= h raw_product.stock %></td>
+    <td<%= td_class %>><%= h raw_product.provider.name rescue "" %></td>
+    <td align="center"<%= td_class %>>
+        <%= link_to image_tag('icon-view.gif', :alt => t('general.show'),  :title => t('general.show') ), raw_product_url(raw_product) %>
+        <%= link_to image_tag('icon-edit.gif', :alt => t('general.edit'), :title => t('general.edit') ), edit_raw_product_path(raw_product) %>
+        <%= link_to image_tag('icon-delete.gif', :alt => t('general.delete'), :title =>  t('general.delete') ), raw_product_url(raw_product), :confirm => t('base_products.are_you_sure'), :method => :delete %>
+        <%= link_to image_tag('traducirthumb.png', :alt => t('translations.translate'), :title => t('translations.translate')), raw_product_raw_product_translations_url(raw_product) %>
+    </td>
+  </tr>
+<% end %>

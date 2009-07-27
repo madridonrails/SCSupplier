@@ -1,0 +1,13 @@
+<%=  form_tag users_url, :method => :get %>
+  <table id="table-filter">
+    <tr>
+      <td>Login </td>
+      <td><%= text_field_tag 'filter[login]', (@filter[:login] rescue '')   %></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><%= text_field_tag 'filter[email]', (@filter[:email] rescue '') %></td>
+    </tr>
+  </table>
+  <%= submit_tag t('general.filter'), {:class => "button"} %>
+</form>

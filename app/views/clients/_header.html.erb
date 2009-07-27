@@ -1,0 +1,18 @@
+<colgroup><col/><col/><col/><col width"115"></colgroup>
+<tr>
+  <th><%= link_to t('clients.commercial_name') , clients_url(get_order('client_name')) %></th>
+  <th><%= link_to t('general.name') , clients_url(get_order('name')) %></th>
+
+  <!--th><%= link_to t('general.surname') , clients_url(get_order('surname')) %></th-->
+
+  <th><%= link_to 'e-mail' , clients_url(get_order('email')) %></th>
+  <th><%= link_to t('general.phone') , clients_url(get_order('phone')) %></th>
+  <th><%= link_to t('general.address') , clients_url(get_order('address')) %></th>
+
+  <!--th><%= link_to 'Ciudad' , clients_url(get_order('city')) %></th>
+  <th><%= link_to 'País' , clients_url(get_order('country')) %></th>
+  <th><%= link_to 'Código Postal' , clients_url(get_order('postal_code')) %></th>
+  <th><%= link_to 'Teléfono móvil' , clients_url(get_order('mobile')) %></th>
+  <th><%= link_to 'Fax' , clients_url(get_order('fax')) %></th-->
+  <th><%= t('general.actions') %></th>
+</tr>
